@@ -220,7 +220,6 @@ advanced-nlu-toolkit/
 ├── configs/
 ├── data/
 │   └── sample_docs/
-├── notebooks/
 ├── requirements.txt
 ├── .gitignore
 └── README.md

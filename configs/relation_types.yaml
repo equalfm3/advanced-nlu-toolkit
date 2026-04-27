@@ -1,0 +1,48 @@
+# Relation type schema for the relation extractor
+# Each relation defines valid subject/object entity types
+
+relations:
+  - name: "NA"
+    description: "No relation between entities"
+    subject_types: ["*"]
+    object_types: ["*"]
+
+  - name: "bornIn"
+    description: "Person was born in a location"
+    subject_types: ["PERSON"]
+    object_types: ["LOC"]
+
+  - name: "headquarteredIn"
+    description: "Organization is headquartered in a location"
+    subject_types: ["ORG"]
+    object_types: ["LOC"]
+
+  - name: "foundedBy"
+    description: "Organization was founded by a person"
+    subject_types: ["ORG"]
+    object_types: ["PERSON"]
+
+  - name: "dateOfBirth"
+    description: "Person's date of birth"
+    subject_types: ["PERSON"]
+    object_types: ["DATE"]
+
+  - name: "memberOf"
+    description: "Person or org is a member of another org"
+    subject_types: ["PERSON", "ORG"]
+    object_types: ["ORG"]
+
+  - name: "locatedIn"
+    description: "Location or org is located in a location"
+    subject_types: ["LOC", "ORG"]
+    object_types: ["LOC"]
+
+  - name: "creatorOf"
+    description: "Person or org created a work or product"
+    subject_types: ["PERSON", "ORG"]
+    object_types: ["WORK_OF_ART", "PRODUCT"]
+
+settings:
+  na_threshold: 0.3
+  max_entity_pairs_per_sentence: 50
+  negative_sampling_ratio: 3.0
